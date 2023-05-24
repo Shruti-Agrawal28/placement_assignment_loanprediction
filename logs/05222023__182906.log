@@ -1,0 +1,5 @@
+[ 2023-05-22 18:29:07,505 ] 17 root - INFO - Creating model resolver object
+[ 2023-05-22 18:29:07,521 ] 19 root - INFO - Reading file :LoanApprovalPrediction.csv
+[ 2023-05-22 18:29:07,521 ] 30 root - INFO - Loading transformer to transform dataset
+[ 2023-05-22 18:29:07,521 ] 36 root - INFO - Loading model to make prediction
+[ 2023-05-22 18:29:07,521 ] 40 root - INFO - Target encoder to convert predicted column into categorical

@@ -1,0 +1,4 @@
+[ 2023-05-22 18:28:39,283 ] 17 root - INFO - Creating model resolver object
+[ 2023-05-22 18:28:39,283 ] 19 root - INFO - Reading file :LoanApprovalPrediction.csv
+[ 2023-05-22 18:28:39,299 ] 30 root - INFO - Loading transformer to transform dataset
+[ 2023-05-22 18:28:39,299 ] 36 root - INFO - Loading model to make prediction
