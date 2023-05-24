@@ -5,7 +5,8 @@ from typing import Optional
 import os, sys
 from sklearn.linear_model import LogisticRegression
 from loan import utils
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, classification_report
+import streamlit as st
 
 
 class ModelTrainer:
@@ -49,7 +50,10 @@ class ModelTrainer:
             logging.info(f"Calculating f1 test score")
             yhat_test = model.predict(x_test)
             f1_test_score = f1_score(y_true=y_test, y_pred=yhat_test)
-
+            report = classification_report(y_test, yhat_test)
+            st.text("Classification Report:")
+            st.text(report)
+            st.text(f"Prediction using model: {(yhat_test[:5])}")
             logging.info(f"train score:{f1_train_score} and tests score {f1_test_score}")
             # check for overfitting or underfiiting or expected score
             logging.info(f"Checking if our model is underfitting or not")
