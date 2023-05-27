@@ -1,18 +1,16 @@
 # Use an official Python runtime as the base image
-FROM python:3.9-slim-buster
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the requirements file and install dependencies
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-# Copy the source code into the container
-COPY . .
-
-# Expose the port your application will be running on
-EXPOSE 5000
-
-# Set the entrypoint command to start the Flask application
-CMD ["python", "main.py"]
+FROM python:3.8
+USER root
+RUN mkdir /app
+COPY . /app/
+WORKDIR /app/
+RUN pip3 install -r requirements.txt
+ENV AIRFLOW_HOME="/app/airflow"
+ENV AIRFLOW__CORE__DAGBAG_IMPORT_TIMEOUT=1000
+ENV AIRFLOW__CORE__ENABLE_XCOM_PICKLING=True
+RUN airflow db init
+RUN airflow users create  -e shrutiagr2806@gmail.com -f Shruti -l Agrwal -p admin -r Admin  -u admin
+RUN chmod 777 start.sh
+RUN apt update -y && apt install awscli -y
+ENTRYPOINT [ "/bin/sh" ]
+CMD ["start.sh"]
