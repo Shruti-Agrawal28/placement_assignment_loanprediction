@@ -17,5 +17,6 @@ pandas~=2.0.1
 PyYAML
 numpy
 scikit-learn
--e .
 streamlit
+apache-airflow
+-e .
