@@ -1,0 +1,31 @@
+[ 2023-05-24 13:52:28,534 ] 17 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-05-24 13:52:28,534 ] 24 root - INFO - Exporting collection data as pandas dataframe
+[ 2023-05-24 13:52:28,535 ] 20 root - INFO - Reading data 
+[ 2023-05-24 13:52:28,568 ] 22 root - INFO - Found columns: Index(['Loan_ID', 'Gender', 'Married', 'Dependents', 'Education',
+       'Self_Employed', 'ApplicantIncome', 'CoapplicantIncome', 'LoanAmount',
+       'Loan_Amount_Term', 'Credit_History', 'Property_Area', 'Loan_Status'],
+      dtype='object')
+[ 2023-05-24 13:52:28,569 ] 26 root - INFO - Row and columns in df: (614, 13)
+[ 2023-05-24 13:52:28,569 ] 28 root - INFO - Save data in feature store
+[ 2023-05-24 13:52:28,585 ] 40 root - INFO - Create feature store folder if not available
+[ 2023-05-24 13:52:28,598 ] 44 root - INFO - Save df to feature store folder
+[ 2023-05-24 13:52:28,622 ] 48 root - INFO - split dataset into train and test set
+[ 2023-05-24 13:52:28,629 ] 52 root - INFO - create dataset directory folder if not available
+[ 2023-05-24 13:52:28,629 ] 57 root - INFO - Save df to feature store folder
+[ 2023-05-24 13:52:28,661 ] 69 root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='C:\\Users\\MGC\\PycharmProjects\\loanprediction\\artifact\\05242023__135228\\data_ingestion\\feature_store\\LoanApprovalPrediction.csv', train_file_path='C:\\Users\\MGC\\PycharmProjects\\loanprediction\\artifact\\05242023__135228\\data_ingestion\\dataset\\train.csv', test_file_path='C:\\Users\\MGC\\PycharmProjects\\loanprediction\\artifact\\05242023__135228\\data_ingestion\\dataset\\test.csv')
+[ 2023-05-24 13:52:28,662 ] 25 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Transformation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-05-24 13:52:28,714 ] 76 root - INFO - Before resampling in training set Input: (491, 12) Target:(491,)
+[ 2023-05-24 13:52:28,763 ] 78 root - INFO - After resampling in training set Input: (656, 12) Target:(656,)
+[ 2023-05-24 13:52:28,780 ] 80 root - INFO - Before resampling in testing set Input: (123, 12) Target:(123,)
+[ 2023-05-24 13:52:28,828 ] 82 root - INFO - After resampling in testing set Input: (154, 12) Target:(154,)
+[ 2023-05-24 13:52:28,846 ] 54 root - INFO - Entered the save_object method of utils
+[ 2023-05-24 13:52:28,864 ] 58 root - INFO - Exited the save_object method of utils
+[ 2023-05-24 13:52:28,864 ] 54 root - INFO - Entered the save_object method of utils
+[ 2023-05-24 13:52:28,870 ] 58 root - INFO - Exited the save_object method of utils
+[ 2023-05-24 13:52:28,872 ] 113 root - INFO - Data transformation object DataTransformationArtifact(transform_object_path='C:\\Users\\MGC\\PycharmProjects\\loanprediction\\artifact\\05242023__135228\\data_transformation\\transformer\\transformer.pkl', transformed_train_path='C:\\Users\\MGC\\PycharmProjects\\loanprediction\\artifact\\05242023__135228\\data_transformation\\transformed\\train.npz', transformed_test_path='C:\\Users\\MGC\\PycharmProjects\\loanprediction\\artifact\\05242023__135228\\data_transformation\\transformed\\test.npz', target_encoder_path='C:\\Users\\MGC\\PycharmProjects\\loanprediction\\artifact\\05242023__135228\\data_transformation\\target_encoder\\target_encoder.pkl')
+[ 2023-05-24 13:52:28,873 ] 18 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Model Trainer <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-05-24 13:52:28,873 ] 35 root - INFO - Loading train and test array.
+[ 2023-05-24 13:52:28,890 ] 39 root - INFO - Splitting input and target feature from both train and test arr.
+[ 2023-05-24 13:52:28,890 ] 43 root - INFO - Train the model
+[ 2023-05-24 13:52:28,955 ] 46 root - INFO - Calculating f1 train score
+[ 2023-05-24 13:52:28,961 ] 50 root - INFO - Calculating f1 test score
